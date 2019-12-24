@@ -33,9 +33,9 @@ public class MenuRepository {
     	}
     	
     	return menus.stream()
-			.filter(menu -> menu.toNumber() == menuNumber)
-			.findFirst()
-			.get();
+    			.filter(menu -> menu.toNumber() == menuNumber)
+    			.findFirst()
+    			.get();
     }
     
     private static boolean hasMenuNumber(int menuNumber) {

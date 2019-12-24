@@ -70,8 +70,8 @@ public class Orders {
 	
 	public int toChickenCount() {
 		return orderList.stream()
-					.filter(order -> order.toMenu().toCategory().isChicken())
-					.collect(Collectors.summingInt(order -> order.toMenuCount().toInteger()));
+				.filter(order -> order.toMenu().toCategory().isChicken())
+				.collect(Collectors.summingInt(order -> order.toMenuCount().toInteger()));
 	}
 	
 	public double applyCashDiscount(final double allPrice, final PaymentOption paymentOption) {

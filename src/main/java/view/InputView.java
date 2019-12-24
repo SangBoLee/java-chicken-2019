@@ -29,7 +29,7 @@ public class InputView {
     }
 
     public static Table inputTableNumber() {
-		try {
+    	try {
 			OutputView.printTables(TableRepository.tables());
 			System.out.println("\n## 테이블을 선택하세요.");
 			return TableRepository.hasTableNumber(new Table(scanner.nextLine()));

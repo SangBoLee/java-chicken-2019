@@ -9,7 +9,7 @@ public class Table {
     		throw new IllegalArgumentException("입력된 값이 없습니다.");
     	}
     	
-        this.number = Integer.parseInt(number);
+    	this.number = Integer.parseInt(number);
     }
 
 	@Override

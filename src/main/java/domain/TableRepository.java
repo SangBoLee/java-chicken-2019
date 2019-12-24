@@ -29,8 +29,8 @@ public class TableRepository {
     	}
     	
     	return tables.stream()
-			.filter(table -> table.isSame(input))
-			.findFirst()
-			.get();
+    			.filter(table -> table.isSame(input))
+    			.findFirst()
+    			.get();
     }
 }
