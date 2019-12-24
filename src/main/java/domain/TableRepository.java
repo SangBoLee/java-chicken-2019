@@ -21,16 +21,16 @@ public class TableRepository {
     }
     
     public static Table hasTableNumber(Table input) {
-    	if (!tables.stream()
-    			.filter(table -> table.isSame(input))
-    			.findFirst()
-    			.isPresent()) {
-    		throw new IllegalArgumentException("존재하지 않는 테이블입니다.");
-    	}
+        if (!tables.stream()
+                .filter(table -> table.isSame(input))
+                .findFirst()
+                .isPresent()) {
+            throw new IllegalArgumentException("존재하지 않는 테이블입니다.");
+        }
     	
-    	return tables.stream()
-    			.filter(table -> table.isSame(input))
-    			.findFirst()
-    			.get();
+        return tables.stream()
+                .filter(table -> table.isSame(input))
+                .findFirst()
+                .get();
     }
 }

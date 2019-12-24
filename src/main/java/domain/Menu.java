@@ -19,18 +19,18 @@ public class Menu {
     }
     
     public int toNumber() {
-    	return number;
+        return number;
     }
     
     public String toName() {
-    	return name;
+        return name;
     }
     
     public int toPrice() {
-    	return price;
+        return price;
     }
     
     public Category toCategory() {
-    	return category;
+        return category;
     }
 }

@@ -1,8 +1,8 @@
 package domain;
 
 public class Order {
-	private final Menu menu;
-	private final MenuCount menuCount;
+    private final Menu menu;
+    private final MenuCount menuCount;
 	
     public Order(final Menu menu, final MenuCount menuCount) {
         this.menu = menu;
@@ -10,18 +10,18 @@ public class Order {
     }
     
     public int toOrderPrice() {
-    	return menu.toPrice() * menuCount.toInteger();
+        return menu.toPrice() * menuCount.toInteger();
     }
     
     public String toString() {
-    	return menu.toName() + " " + menuCount.toInteger() + " " + toOrderPrice();
+        return menu.toName() + " " + menuCount.toInteger() + " " + toOrderPrice();
     }
     
     public Menu toMenu() {
-    	return menu; 
+        return menu; 
     }
     
     public MenuCount toMenuCount() {
-    	return menuCount;
+        return menuCount;
     }
 }

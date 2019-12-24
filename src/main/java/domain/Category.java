@@ -16,6 +16,6 @@ public enum Category {
     }
     
     public boolean isChicken() {
-    	return this == CHICKEN;
+        return this == CHICKEN;
     }
 }

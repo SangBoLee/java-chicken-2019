@@ -14,10 +14,10 @@ public class OutputView {
     private static final String PAY_LINE = "└ ₩ ┘";
     
     public static void printFunction() {
-    	System.out.println("## 메인화면");
-    	System.out.println("1 - 주문등록");
-    	System.out.println("2 - 결제하기");
-    	System.out.println("3 - 프로그램 종료\n");
+        System.out.println("## 메인화면");
+        System.out.println("1 - 주문등록");
+        System.out.println("2 - 결제하기");
+        System.out.println("3 - 프로그램 종료\n");
     }
 
     public static void printTables(final List<Table> tables) {
@@ -29,7 +29,7 @@ public class OutputView {
     }
 
     public static void printMenus(final List<Menu> menus) {
-    	System.out.println();
+        System.out.println();
         for (final Menu menu : menus) {
             System.out.println(menu);
         }
@@ -51,10 +51,10 @@ public class OutputView {
     }
     
     private static String getLastLine(Table table) {
-    	if (table.toOrders().hasNotOrder()) {
-    		return BOTTOM_LINE;
+        if (table.toOrders().hasNotOrder()) {
+    	    return BOTTOM_LINE;
     	}
-    	return PAY_LINE;
+        return PAY_LINE;
     }
 
     private static void printTableNumbers(final List<Table> tables) {
@@ -65,20 +65,20 @@ public class OutputView {
     }
     
     public static void printOrderList(final Table table) {
-    	System.out.println("\n## 주문내역\n메뉴 수량 금액");
+        System.out.println("\n## 주문내역\n메뉴 수량 금액");
     	
-    	for (Order order : table.toOrders().toList()) {
-    		System.out.println(order.toString());
-    	}
-    	System.out.println();
+        for (Order order : table.toOrders().toList()) {
+            System.out.println(order.toString());
+        }
+        System.out.println();
     }
     
     public static void printPayingProcess(final Table table) {
-    	System.out.println(table.toString() + "번 테이블의 결제를 진행합니다.");
+        System.out.println(table.toString() + "번 테이블의 결제를 진행합니다.");
     }
     
     public static void printAllPrice(final Table table, final PaymentOption paymentOption) {
-    	System.out.println("\n## 최종 결제할 금액");
-    	System.out.println(table.toOrders().toAllPrice(paymentOption)+ "\n");
+        System.out.println("\n## 최종 결제할 금액");
+        System.out.println(table.toOrders().toAllPrice(paymentOption)+ "\n");
     }
 }
