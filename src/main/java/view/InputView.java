@@ -32,7 +32,7 @@ public class InputView {
         try {
             OutputView.printTables(TableRepository.tables());
             System.out.println("\n## 테이블을 선택하세요.");
-            return TableRepository.hasTableNumber(new Table(scanner.nextLine()));
+            return TableRepository.hasTable(new Table(scanner.nextLine()));
         } catch (NumberFormatException e) {
             System.out.println("숫자만 입력 가능합니다.");
             return inputTableNumber();

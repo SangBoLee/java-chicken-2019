@@ -20,7 +20,7 @@ public class TableRepository {
         return Collections.unmodifiableList(tables);
     }
     
-    public static Table hasTableNumber(Table input) {
+    public static Table hasTable(Table input) {
         if (!tables.stream()
                 .filter(table -> table.isSame(input))
                 .findFirst()

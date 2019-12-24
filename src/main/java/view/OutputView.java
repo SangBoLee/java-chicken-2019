@@ -65,7 +65,8 @@ public class OutputView {
     }
     
     public static void printOrderList(final Table table) {
-        System.out.println("\n## 주문내역\n메뉴 수량 금액");
+        System.out.println("\n## 주문내역");
+        System.out.println("메뉴 수량 금액");
     	
         for (Order order : table.toOrders().toList()) {
             System.out.println(order.toString());
