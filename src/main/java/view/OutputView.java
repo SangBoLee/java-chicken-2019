@@ -14,7 +14,10 @@ public class OutputView {
     private static final String PAY_LINE = "└ ₩ ┘";
     
     public static void printFunction() {
-    	System.out.println("## 메인화면\n1 - 주문등록\n2 - 결제하기\n3 - 프로그램 종료\n");
+    	System.out.println("## 메인화면");
+    	System.out.println("1 - 주문등록");
+    	System.out.println("2 - 결제하기");
+    	System.out.println("3 - 프로그램 종료\n");
     }
 
     public static void printTables(final List<Table> tables) {
@@ -41,13 +44,13 @@ public class OutputView {
     }
     
     private static void printLastLine(final List<Table> tables) {
-        for (final Table table : tables) {    	
-            System.out.print(checkOrder(table));
+        for (Table table : tables) {    	
+            System.out.print(getLastLine(table));
         }
         System.out.println();
     }
     
-    private static String checkOrder(Table table) {
+    private static String getLastLine(Table table) {
     	if (table.toOrders().hasNotOrder()) {
     		return BOTTOM_LINE;
     	}
@@ -55,7 +58,7 @@ public class OutputView {
     }
 
     private static void printTableNumbers(final List<Table> tables) {
-        for (final Table table : tables) {
+        for (Table table : tables) {
             System.out.printf(TABLE_FORMAT, table);
         }
         System.out.println();

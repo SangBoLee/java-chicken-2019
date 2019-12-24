@@ -20,4 +20,8 @@ public class Order {
     public Menu toMenu() {
     	return menu; 
     }
+    
+    public MenuCount toMenuCount() {
+    	return menuCount;
+    }
 }

@@ -22,17 +22,26 @@ public class MenuRepository {
         return Collections.unmodifiableList(menus);
     }
     
-    public static Menu isExist(int number) throws Exception {
-    	if (!menus.stream()
-    				.filter(menu -> menu.toNumber() == number)
-    				.findFirst()
-    				.isPresent()) {
-    		throw new Exception("존재하지 않는 메뉴입니다.");
+    public static Menu hasMenu(String number) {
+    	if (number.trim().isEmpty()) {
+    		throw new IllegalArgumentException("입력된 값이 없습니다.");
+    	}
+    	int menuNumber = Integer.parseInt(number);
+    	
+    	if (!hasMenuNumber(menuNumber)) {
+    		throw new IllegalArgumentException("존재하지 않는 메뉴입니다.");
     	}
     	
     	return menus.stream()
-				.filter(menu -> menu.toNumber() == number)
-				.findFirst()
-				.get();
+			.filter(menu -> menu.toNumber() == menuNumber)
+			.findFirst()
+			.get();
+    }
+    
+    private static boolean hasMenuNumber(int menuNumber) {
+    	return menus.stream()
+    			.filter(menu -> menu.toNumber() == menuNumber)
+    			.findFirst()
+    			.isPresent();
     }
 }

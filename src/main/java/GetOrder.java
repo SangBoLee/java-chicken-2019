@@ -14,7 +14,15 @@ public class GetOrder {
 		Table table = InputView.inputTableNumber();
 		OutputView.printMenus(MenuRepository.menus());
 		Order order = new Order(InputView.inputMenuNumber(), InputView.inputMenuCount());
-		
-		table.toOrders().addOrder(order);
+		tryModifing(table, order);
+	}
+	
+	public void tryModifing(Table table, Order order) {
+		try {
+			table.toOrders().addOrder(order);
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+			run();
+		}
 	}
 }
